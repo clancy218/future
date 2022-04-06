@@ -20,4 +20,9 @@ public class HomeController {
     public String indexPage(){
         return "index";
     }
+
+
+    public String getData(){
+        return null;
+    }
 }
