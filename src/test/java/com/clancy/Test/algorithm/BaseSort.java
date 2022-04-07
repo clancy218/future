@@ -15,7 +15,11 @@ public class BaseSort {
 
     public static void main(String[] args) {
         int[] arr = genRandomArray(20,100);
+        System.out.println("原数组：");
+        printResult(arr);
         insertSort(arr);
+        System.out.println();
+        System.out.println("处理后数组：");
         printResult(arr);
 
     }
@@ -84,7 +88,7 @@ public class BaseSort {
                 if (!flag) break;
             }
         }
-        System.out.println("遍历了：" + runTimes + "次");
+//        System.out.println("遍历了：" + runTimes + "次");
     }
 
 
@@ -93,7 +97,7 @@ public class BaseSort {
      */
     private static boolean swap(int[] arr, int x, int y) {
         if (x != y) {
-            arr[x] = arr[x] ^ arr[y];
+            arr[x] = arr[x] ^ arr[y]; // 无需申请额外空间进行交换（但x、y这两个数不能相等，否则异或后结果为零）
             arr[y] = arr[x] ^ arr[y];
             arr[x] = arr[x] ^ arr[y];
         } else {
