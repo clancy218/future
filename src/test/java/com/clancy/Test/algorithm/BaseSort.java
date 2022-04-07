@@ -14,7 +14,7 @@ import java.util.Objects;
 public class BaseSort {
 
     public static void main(String[] args) {
-        int[] arr = {0, 2, 4, 5, 1, 6, 2, 1, 3, 45};
+        int[] arr = genRandomArray(20,100);
         insertSort(arr);
         printResult(arr);
 
@@ -111,5 +111,16 @@ public class BaseSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+    }
+
+    /*
+    随机生成整型数组
+     */
+    private static int[] genRandomArray(int maxSize, int maxValue) {
+        int[] arr = new int[(int) (Math.random() * maxSize)+1];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * maxValue + 1) - (int) Math.random() * maxValue;
+        }
+        return arr;
     }
 }
